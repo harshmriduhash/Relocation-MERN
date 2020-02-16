@@ -1,0 +1,314 @@
+// font imports
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+// Variables
+$h3-font: 'Raleway', sans-serif;
+$current-city-font: 'Quicksand', sans-serif;
+$accent-color: #9CCC65;
+$progress-accent-color: #ccf1a2;
+
+
+/* ///////// */
+/* HOME PAGE */
+/* ///////// */
+
+// video background
+.homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
+}
+.no-video .video-container video,
+.touch .video-container video {
+    display: none;
+}
+.no-video .video-container .poster,
+.touch .video-container .poster {
+    display: block !important;
+}
+.video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+    background-repeat: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.video-container .poster img {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+.video-container .filter {
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.video-container video {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+}
+.video-container video.fillWidth {
+    width: 100%;
+}
+
+// page content
+#landingPage {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999;
+    #homePageTitle {
+        text-align: center;
+        margin-top: 15%;
+        z-index: 9990;
+    }
+    #homePageText {
+        text-align: center;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        font-size: 3em;
+        margin-top: -2%;
+        z-index: 9990;
+    }
+    #homePageLogo {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+// modal content
+.modal-content {
+	p {
+		text-align: center;
+	}
+    h4 {
+        text-align: center;
+        color: black;
+        font-family: $h3-font;
+    }
+    input.validate {
+        color: black;
+    }
+    input#email:focus, input#password:focus{
+        border-bottom: 1px solid $accent-color;
+    }
+    .row .input-field label.active {
+        color: $accent-color;
+    }
+
+}
+
+/* //////// */
+/* REGISTER */
+/* //////// */
+#personalInfoForm {
+    input {
+        color: black;
+    }
+    i {
+        color: $accent-color;
+    }
+
+}
+
+.registerLabel {
+        color: $accent-color;
+    }
+
+
+#errorMsg {
+    background-color: rgb(156,204,101);
+    color: red;
+    text-align: center;
+    font-family: $h3-font;
+}
+
+
+/* ///////// */
+/* DASHBOARD */
+/* ///////// */
+
+// image full cover
+body {
+    background-repeat: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+// navigation bar and search bar
+.nav-wrapper{
+	.dropdown-button{position:absolute; right:0; top : 0;
+	}
+.input-field input[type="search"] ~ .material-icons.icon-close{ right:2rem;}
+}
+
+nav {
+	i {
+		-webkit-filter: drop-shadow(0 3px 2px hsla(0,0%,0%,.75));
+		padding: 0px 10px;
+	}
+	// ul a {
+	// 	background-color: white;
+	// }
+    ::-webkit-input-placeholder {
+        color: white;
+        text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+        font-family: $h3-font;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+        color: white;
+        text-shadow: 2px 4px 3px rgba(0,0,0,0.3); 
+        font-family: $h3-font; 
+    }
+    ::-moz-placeholder {  /* Firefox 19+ */
+        color: white;
+        text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+        font-family: $h3-font;  
+    }
+    :-ms-input-placeholder {  
+        color: white;
+        text-shadow: 2px 4px 3px rgba(0,0,0,0.3); 
+        font-family: $h3-font; 
+    }
+    ul a:hover {
+        color: white !important;
+        background-color: $accent-color !important;
+    }
+    .dropdown-content li>a{
+        color: $accent-color;
+    }
+    #dropdown1 {
+        border-radius: 5px;
+    }
+}
+
+// autocomplete list
+.autocomplete-suggestions {
+    .autocomplete-suggestion {
+        background-color: white;
+        color: black;
+        border-bottom: thick 1px;
+        padding:2px 0px 2px 15px;
+    }
+    .autocomplete-selected { 
+        background: #F0F0F0; 
+    }
+}
+
+// logo
+#logoImg {
+    bottom: 0%;
+    position: fixed;
+}
+
+// main content
+#mainContent {
+    padding-top: 20px;
+    h1 {
+        margin: 0rem;
+        padding: 0rem 0rem 3rem 0rem;
+    }
+    .whiteBorder {
+        border-right: 1px double white;
+    }
+    div.row.infoTitle {
+        // background-color: white;
+        padding:10px;
+        color: white !important;
+        font-family: $h3-font;
+        height:auto;
+        width: auto;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    .cardText {
+        font-family: $h3-font;
+    }
+    .colTitles {
+        p {
+            margin:0em;
+            color:black;
+        }
+    }
+    .roundedCorners {
+        border-radius: 5px;
+    }
+    h1 {
+        font-family: $current-city-font;
+    }
+    .progress {
+        background-color: $progress-accent-color;
+        .determinate {
+            background-color: $accent-color;
+        }
+    }
+    input#jobSearch {
+        color:black;
+        :focus {
+            border-bottom: 1px solid $accent-color;
+        }
+    }
+    input#jobSearch:focus {
+            border-bottom: 1px solid $accent-color;
+        }
+    .card-title {
+        font: $h3-font;
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+    .card-subTitle {
+        font: $h3-font;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+    }
+   .input-field input[type=text]:focus + label {
+     color: $accent-color;
+    }
+    /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid $accent-color;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   #jobButton {
+        background-color: $accent-color;
+   }
+   #currentWeatherInfo {
+        font-size: 2rem;
+   }
+}
+
+
+
+///////////////////
+// MEDIA QUERIES //
+///////////////////
+
+@media (min-aspect-ratio: 16/9) {
+  .video-container {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .video-container {
+    width: auto;
+    height: 100%;
+  }
+}
+

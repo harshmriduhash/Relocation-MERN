@@ -1,0 +1,77 @@
+{{!-- Background video --}}
+<div class="homepage-hero-module">
+    <div class="video-container">
+        <div class="filter"></div>
+        <video autoplay loop class="fillWidth" poster='/assets/bg/video/SnapShots/windyCity.jpg'>
+            <source src="/assets/bg/video/MP4/windyCity.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="/assets/bg/video/WEBM/windyCity.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="/assets/bg/video/OGV/windyCity.ogv" type='video/ogv' />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+    </div>
+</div>
+
+{{!-- Main Content --}}
+<div id="landingPage">
+
+    {{!-- Content --}}
+    <div class="container">
+        <div id = 'homePageTitle'>
+            <img id='homePageLogo' src="/assets/logo/relocate_logo_horizontal_white.png" alt="relocateLogo">
+            <p id="homePageText">Learn. Move. Love.</p>
+        </div>
+
+{{!------------- ERROR MESSAGE ------------------------------}}
+        {{#if errorMsg}}
+        <h5 id='errorMsg'>{{errorMsg}}</h5>
+        {{/if}}
+{{!----------------------------------------------------------}}
+        <!-- Modal Trigger -->
+        <div class='homePageBtns' style='text-align:center'>
+            <button data-target="modal1" class="light-green lighten-1 waves-effect waves-light btn-large logInBtn modal-trigger"><i class="material-icons right">play_circle_outline</i>Login</button>
+            <a href='/register' class='light-green lighten-1 waves-effect waves-light btn-large registerBtn'><i class='material-icons right'>play_circle_outline</i>Register</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content center-align">
+        <img id='homePageLogo' src="/assets/logo/relocate_logo_black.png" alt="relocateLogo">
+        <h4 id='modalSubheader'>Login</h4>
+        <div class='row'>
+            <form class="col s12" method='POST' action='/dashboard'>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" name = 'email' class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class="input-field col s12">
+                        <input id="password" type="password" name = 'password' class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class='row' style='text-align:center'>
+                    <a href="/register" class=" modal-action modal-close waves-effect waves-green btn-flat" id='signUpBtn'>Don't Have An Account?</a>
+                </div>
+                <div class='row' style='text-align:center'>
+                    {{!-- <a href="/dashboard" class="light-green lighten-1 waves-effect waves-green btn-large" id='signInBtn' name = 'login'><i class='material-icons right'>perm_identity</i>Sign In</a> --}}
+                    <button type='submit'class="light-green lighten-1 waves-effect waves-green btn-large" id='signInBtn' name = 'login'><i class='material-icons right'>perm_identity</i>Sign In
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Popup Script -->
+<script>
+    $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal({
+        dismissible: true
+    })
+  });
+</script>

@@ -1,0 +1,39 @@
+{
+  "name": "relocate",
+  "version": "1.0.0",
+  "description": "Come, Change Your Life",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "logger": "0.0.1",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.6.2",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7",
+    "request": "^2.74.0",
+    "sequelize": "^3.23.6"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "6.2.2",
+    "npm": "3.9.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimmiejackson414/relocate"
+  },
+  "author": "Dream Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jimmiejackson414/relocate/issues"
+  },
+  "homepage": "https://github.com/jimmiejackson414/relocate"
+}

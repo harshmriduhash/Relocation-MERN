@@ -1,0 +1,322 @@
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="/dashboard/logout">logout</a></li>
+</ul>
+
+<nav class='transparent'>
+  <div class="nav-wrapper">
+    <form id='search-form'>
+      <div class="input-field">
+        <input id="search" placeholder='Enter the city' name='citySearch' type='search' autocomplete='off' required>
+        <label for="search"><i class="material-icons">search</i></label>
+      </div>
+
+<!-- Dropdown Trigger -->
+      <a class="dropdown-button" href="#" data-activates="dropdown1"  data-beloworigin="true"><i class="material-icons ">reorder</i></a>
+    </form>
+  </div>
+</nav>
+
+{{!-- Main content --}}
+<div class = 'row'>
+
+	{{!-- Left side title --}}
+	<div class='col s1'>
+	   <div id='logoImg' class = 'valign-wrapper'>
+            <img src="./assets/logo/relocate_logo_vertical_white.png" alt="relocateLogo">  
+       </div>
+	</div>
+
+    {{!-- Main Info --}}
+	<div class='col s11' id = 'mainContent'>
+        
+        {{!-- Current city --}}
+        <div class = 'row center-align'>
+            <h1>Current city: <span id = 'currentCity'></span></h1>
+        </div>
+
+        <div class = 'row'>
+            <div class = 'col s4 whiteBorder center-align'>
+                {{!-- Jobs Cards --}}
+                <div class = 'row infoTitle'>
+                    <span class="card-title">Summary</span>
+                </div>
+                <div class = 'row center-align'>
+                    <div class = 'card-panel white center-align roundedCorners'>
+                        <div class = 'row'>
+                            <p class="black-text cardText" id = 'citySummary'>Please enter a city in the search bar for more information.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class = 'row'>
+                    <div class = 'card-panel white center-align roundedCorners'>
+                        <span class="card-subTitle black-text">Local Jobs</span>
+                        {{!-- <p class="black-text cardText" id = 'localJobsInfo'>Please enter a city in the search bar for more information.
+                        </p> --}}
+                        <div class = 'row'>
+
+                            <form class = 'col s12' id="jobSearchForm" METHOD='GET'>
+                                <div class = 'row'> 
+                                    <input placeholder="Enter job" id="jobSearch" type="text" class="validate">
+                                </div>  
+                            </form>
+                        </div>
+                        <div class="row">
+                            <button class="btn waves-effect waves-light" id="jobButton" type="submit" name="action" form='jobSearchForm'>Search
+                                <i class="material-icons right">search</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+            {{!-- City Scores --}}
+            <div class = 'col s4 whiteBorder center-align'>
+                <div class = 'row infoTitle'>
+                    <span class="card-title">City Scores</span>
+                </div>
+                <div class = 'row'>
+                    <div class = 'card-panel white center-align roundedCorners'>
+                        <div class = 'row'>
+                            <div class = 'col s5 colTitles'>
+                                <p class='cardText'>City Score: <span id="cityScore"></span> </p>
+                            </div>
+                            <div class = 'col s7'>
+                                <div class="progress">
+                                    <div class="determinate" id="cityScoreDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s5 colTitles'>
+                                <p class='cardText'>Housing: <span id="housing"></span></p>
+                            </div>
+                            <div class = 'col s7'>
+                                <div class="progress">
+                                    <div class="determinate" id="housingDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s6 colTitles'>
+                                <p class='cardText'>Mass Transit: <span id="massTransit"></span></p>
+                            </div>
+                            <div class = 'col s6'>
+                                <div class="progress">
+                                    <div class="determinate" id="massTransitDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s5 colTitles'>
+                                <p class='cardText'>Commute: <span id="commute"></span></p>
+                            </div>
+                            <div class = 'col s7'>
+                                <div class="progress">
+                                    <div class="determinate" id="commuteDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s5 colTitles'>
+                                <p class='cardText'>Safety: <span id="safety"></span></p>
+                            </div>
+                            <div class = 'col s7'>
+                                <div class="progress">
+                                    <div class="determinate" id="safetyDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s5 colTitles'>
+                                <p class='cardText'>Education: <span id="education"></span></p>
+                            </div>
+                            <div class = 'col s7'>
+                                <div class="progress">
+                                    <div class="determinate" id="educationDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s5 colTitles'>
+                                <p class='cardText'>Internet Access: <span id="internetAccess"></span></p>
+                            </div>
+                            <div class = 'col s7'>
+                                <div class="progress">
+                                    <div class="determinate" id="internetDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s6 colTitles'>
+                                <p class='cardText'>Leisure and Culture: <span id="leisureAndCulture"></span></p>
+                            </div>
+                            <div class = 'col s6'>
+                                <div class="progress">
+                                    <div class="determinate" id="leisureDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s5 colTitles'>
+                                <p class='cardText'>Tolerance: <span id="tolerance"></span></p>
+                            </div>
+                            <div class = 'col s7'>
+                                <div class="progress">
+                                    <div class="determinate" id="toleranceDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s5 colTitles'>
+                                <p class='cardText'>Outdoors: <span id="outdoors"></span></p>
+                            </div>
+                            <div class = 'col s7'>
+                                <div class="progress">
+                                    <div class="determinate" id="outdoorDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- Neighborhoods Card --}}
+                {{!-- <div class = 'row'>
+                    <div class = 'row infoTitle'
+                        <span class="card-title">Neighborhoods</span>
+                    </div>
+                    <div class = 'card-panel white center-align roundedCorners'>
+                        <p class="black-text cardText" id = 'neighborhoodsInfo'>Please enter a city in the search bar for more information.
+                        </p>
+                    </div>
+                </div> --}}
+                
+                {{!-- Top Attractions Card --}}
+                <div class = 'row'>
+                    <div class = 'row infoTitle'>
+                        <span class="card-title">Cost of Living</span>
+                    </div>
+                    <div class = 'card-panel white center-align roundedCorners'>
+                {{!---------------------------}}        
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Cost of Apples: <span id="apples"></span></p>
+                                <p>(Per Kg)</p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Cost of Bread: <span id="bread"></span></p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Cost of Movie Ticket: <span id="movies"></span></p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Cost of Beer: <span id="beer"></span></p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Cost of Cappuccino: <span id="cappuccino"></span></p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Cost of Meal: <span id="meals"></span></p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Cost of Taxi: <span id="taxi"></span></p>
+                                <p>(Per 5km)</p>
+                            </div>
+                        </div>
+
+                {{!-----------------------------------}}
+                    </div>
+                </div>
+            </div>
+
+            {{!-- <div class = 'row'>
+                            <div class = 'col s6 colTitles'>
+                                <p class='cardText'>Cost of Living: <span id="costOfLiving"></span></p>
+                            </div>
+                            <div class = 'col s6'>
+                                <div class="progress">
+                                    <div class="determinate" id="costOfLivingDet"></div>
+                                </div>
+                            </div>
+                        </div> --}}
+
+            {{!-- Weather Cards --}}
+            <div class = 'col s4 center-align'>
+                <div class = 'row infoTitle'>
+                        <span class="card-title">Weather</span>
+                    </div>
+                <div class = 'row'>
+                    <div class = 'card-panel white center-align roundedCorners'>
+                    <span class="card-subTitle black-text">Annual Weather</span>
+    {{!---------------------------------------------}}             
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Weather Type: <span id="weatherType"></span></p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Number of Clear Days: <span id="clearDays"></span></p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Number of Rainy Days: <span id="rainyDays"></span></p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Agerage High: <span id="tempHigh"></span></p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Average Low: <span id="tempLow"></span></p>
+                            </div>
+                        </div>
+
+    {{!---------------------------------------------}}
+                    </div>
+                </div>
+                <div class = 'row'>
+                    <div class = 'card-panel white center-align roundedCorners'>
+                        <span class="card-subTitle black-text">Current Weather</span>
+                        <p class="black-text cardText" id = 'currentWeatherInfo'>--&deg; F
+                        </p>
+                    </div>
+                </div>
+
+                {{!-- Photos Card --}}
+                <div class = 'row'>
+                    <div class = 'row infoTitle'>
+                        <span class="card-title">Photo</span>
+                    </div>
+                    <div class = 'card-panel white center-align roundedCorners' id = 'picture'>
+                        <p class="black-text cardText" id = 'photosInfo'>Please enter a city in the search bar for more information.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+
+
+<script src="https://cdn.rawgit.com/devbridge/jQuery-Autocomplete/master/dist/jquery.autocomplete.min.js" type="text/javascript" charset="utf-8"></script>
+
+ <script type="text/javascript" src='/assets/js/autocomplete.js'></script>
+

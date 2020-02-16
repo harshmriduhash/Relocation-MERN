@@ -1,0 +1,217 @@
+
+<div class = "container">
+<div class="row" style="text-align:center">
+<img src="/assets/logo/relocate_logo_horizontal_white.png" alt="relocate Logo">
+</div>
+	
+	<div class = 'row'>
+			<form class = 'col s12' id = 'personalInfoForm' action='/dashboard/register' method='post'>
+				<div class = 'card-panel'>
+				<h5>Personal Information:</h5>
+					<div class = 'row'>
+						<div class="input-field col s6">
+							<i class="material-icons prefix icon-grey">perm_identity</i>
+							<input id="first_name" type="text" name='first_name' class="validate">
+		          			<label for="first_name" class='registerLabel'>First Name</label>
+		          		</div>
+		          		<div class="input-field col s6">
+		          			<i class="material-icons prefix icon-grey">perm_identity</i>
+							<input id="last_name" type="text" name='last_name' class="validate">
+		          			<label for="last_name" class='registerLabel'>Last Name</label>
+		          		</div>
+					</div>
+					<div class = 'row'>
+						<div class = 'input-field col s6'>
+							<i class="material-icons prefix icon-grey">email</i>
+							<input id = 'email' type = 'email' name='email' class = 'validate'>
+							<label for = 'email' class='registerLabel'>Email</label>
+						</div>
+						<div class = 'input-field col s6'>
+							<i class="material-icons prefix icon-grey">vpn_key</i>
+							<input id = 'currentLocation' type = 'password' name='password' class = 'validate'>
+							<label for = 'currentLocation' class='registerLabel'>Password</label>
+						</div>
+					</div>
+					<div class= 'row' style='text-align:center'>
+						<button class="light-green lighten-1 btn waves-effect waves-light" id="formSubmit" type="submit" name="action">Submit
+    					<i class="material-icons right">send</i>
+  						</button>
+					</div>
+				</div>
+			</form>
+	</div>
+
+
+
+	{{!-- <div class = 'row'>
+		<form class = 'col s12' id = "formBG" action='/listings' method='post'>
+	   				<div class="card-panel">
+	   				<h5>What are you looking to do while you're visiting <span id=city-name>''</span>?</h5>
+	   				<div class = "row">
+	   					<div class = 'col s4'>
+				   				<p>
+				     		 		<input type="checkbox" id="shoppingCB" name="myActivity" class="myActivity" value="shopping"/>
+				      		 		<label for="shoppingCB">Shopping</label>
+				   				</p>
+				   			</div>
+				   			<div class = 'col s4'>
+				   				<p>
+				     		 		<input type="checkbox" id="sightseeingCB" name="myActivity" class="myActivity" value="tourist"/>
+				      		 		<label for="sightseeingCB">Sightseeing</label>
+				   				</p>
+				   			</div>
+				   			<div class = 'col s4'>
+				   				<p>
+				     		 		<input type="checkbox" id="musicCB" name="myActivity" class="myActivity" value="arts"/>
+				      		 		<label for="musicCB">Music &amp; The Arts</label>
+				   				</p>
+				   			</div>
+				   		
+			   			</div>
+			   			<div class = 'row'>
+			   				<div class = 'col s4'>
+				   				<p>
+				     		 		<input type="checkbox" id="sportsCB" name="myActivity" class="myActivity" value="sport"/>
+				      		 		<label for="sportsCB">Sporting Event</label>
+				   				</p>
+				   			</div>
+				   			<div class = 'col s4'>
+				   				<p>
+				     		 		<input type="checkbox" id="businessCB" name="myActivity" class="myActivity" value="work"/>
+				      		 		<label for="businessCB">Business</label>
+				   				</p>
+				   			</div>
+				   			<div class = 'col s4'>
+				   				<p>
+				     		 		<input type="checkbox" id="foodCB" name="myActivity" class="myActivity" value="food"/>
+				      		 		<label for="foodCB">Food</label>
+				   				</p>
+				   				</div>
+			   			</div>
+			   			<div class = 'row'>
+			   				<div class = 'col s4'>
+				   				<p>
+				     		 		<input type="checkbox" id="socialCB" name="myActivity" class="myActivity" value="social"/>
+				      		 		<label for="socialCB">Social</label>
+				   				</p>
+				   			</div>
+				   			<div class = 'col s4'>
+				   				<p>
+				     		 		<input type="checkbox" id="partyCB" name="myActivity" class="myActivity" value="party"/>
+				      		 		<label for="partyCB">Night Life</label>
+				   				</p>
+				   			</div>
+				   			<div class = 'col s4'>
+				   				<p>
+				     		 		<input type="checkbox" id="otherCB" name="myActivity" class="myActivity" value="culture"/>
+				      		 		<label for="otherCB">Other cultural event</label>
+				   				</p>
+				   				</div>
+			   			</div>
+			   		</div>
+		   	<br>
+		   	<div class="card-panel">	
+		   		<div class = 'row'>		   		
+			   		<div class = 'col s5'>
+				   		<h5>How many people are traveling?</h5>
+				   		<div class="input-field">
+		    				<select name="numOfPeople" id="numOfPeople">
+		      					<option value="" disabled selected>Choose your option</option>
+							    <option value="1">1</option>
+							    <option value="2">2</option>
+							    <option value="3">3</option>
+							    <option value="4">4</option>
+							    <option value="5">5</option>
+							    <option value="6">6</option>
+							    <option value="7">7</option>
+							    <option value="8">8</option>
+							    <option value="9">9</option>
+							    <option value="10">10</option>
+		    				</select>
+		 				</div>	
+			   		</div>
+			   		<div class='col s2'>
+			   		</div>
+			   		<div class = 'col s5'>
+			   			<h5>What's your budget?</h5>
+			   			<div class ='input-field'>
+			   				<select name="budget" id="budget">
+			   					<option value="">Choose your option</option>
+							    <option value="300">Below $300</option>
+							    <option value="1000">$300-$1000</option>
+							    <option value="3000">$1000-$3000</option>
+							    <option value="10000">$3000+</option>
+			   				</select>
+			   			</div>
+			   		</div>
+		   		</div>
+		   	</div>
+		   	<br>
+		   	<div class="card-panel">
+			   	<div class = 'row'>
+			   		<div class = 'col s5'>
+			   			<h5>What are the dates of your trip?</h5>
+			   			<label for="fromInput">From:</label>
+			   			<input type="date" id = "fromInput" class="datepicker">
+			   			<label for="toInput">To:</label>
+			   			<input type="date" id = "toInput" class="datepicker">
+			   		</div>
+			   		<div class="col s2">
+			   		</div>
+			   		<div class = 'col s5'>
+			   			<h5>Other questions:</h5>
+			   				<p>
+				     		 	<input type="checkbox" id="petsCB" name="options" value= "pets"/>
+				      		 	<label for="petsCB">Pets?</label>
+				   			</p>
+				   			<p>
+				     		 	<input type="checkbox" id="childrenCB" name="options" value="children"/>
+				      		 	<label for="childrenCB">Children?</label>
+				   			</p>
+				   			<p>
+				     		 	<input type="checkbox" id="smokingCB" name="options" value="smoking"/>
+				      		 	<label for="smokingCB">Smoking?</label>
+				   			</p>
+				   			<p>
+				     		 	<input type="checkbox" id="wheelchairCB" name="options" value="wheelchair"/>
+				      		 	<label for="wheelchairCB">Wheelchair Accessible?</label>
+				   			</p>
+			   		</div>
+			   	</div>
+			   	</div>
+		   	<div>
+		   		<input type="hidden" id="city-input" name="city" value="paris"/>
+		   		<input type="hidden" name="myActivity" value="travelling"/>
+		   		
+		   	</div>
+		   	<div class = "row" style="text-align:center">
+		   		<button class="btn waves-effect waves-light" id="formSubmit" type="submit" name="action">Submit
+    				<i class="material-icons right">send</i>
+  				</button>
+  			</div>
+		</form>
+	</div>
+</div>
+
+<!-- For dropdown options -->
+<script>
+	$(document).ready(function() {
+		$('select').material_select();
+
+		var city = localStorage.getItem('city');
+		
+		$('#city-input').val(city);
+		$('#city-name').html(city);
+	});
+</script>
+<!-- For Pick A Date -->
+<script>
+
+$('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+</script> --}}
+
+
+
