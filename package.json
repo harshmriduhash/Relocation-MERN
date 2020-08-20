@@ -4,7 +4,7 @@
   "description": "Come, Change Your Life",
   "main": "server.js",
   "dependencies": {
-    "bcrypt": "^0.8.7",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
