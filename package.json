@@ -15,7 +15,7 @@
     "morgan": "^1.7.0",
     "path": "^0.12.7",
     "request": "^2.74.0",
-    "sequelize": "^3.23.6"
+    "sequelize": "^6.3.5"
   },
   "devDependencies": {},
   "engines": {
